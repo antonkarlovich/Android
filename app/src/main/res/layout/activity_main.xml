@@ -4,15 +4,155 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="8dp"
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/publishedTv"
+        android:layout_marginStart="8dp"
+        android:layout_width="112dp"
+        android:layout_height="18dp"
+        app:layout_constraintBottom_toBottomOf="@+id/avatarIv"
+        app:layout_constraintStart_toEndOf="@+id/avatarIv"
+        tools:text="@sample/posts.json/data/published" />
+
+    <TextView
+        android:id="@+id/authorTv"
+        android:layout_marginStart="8dp"
+        android:layout_width="0dp"
+        android:maxLines="1"
+        android:ellipsize="end"
+        app:layout_constraintEnd_toStartOf="@id/moreIv"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@+id/avatarIv"
+        app:layout_constraintTop_toTopOf="@+id/avatarIv"
+        tools:text="@sample/posts.json/data/author" />
+
+
+    <TextView
+        android:id="@+id/contentTv"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:paddingTop="19dp"
+        android:paddingLeft="15dp"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintTop_toBottomOf="@id/avatarIv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/nmedia"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="74dp"
+        tools:text="@sample/posts.json/data/content" />
+
+    <TextView
+        android:id="@+id/countFavorite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toEndOf="@id/favoritIv"
+        app:layout_constraintTop_toBottomOf="@id/contentTv"
+        tools:text="@sample/posts.json/data/countFavorite" />
+
+    <TextView
+        android:id="@+id/countRepostIv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/repostIv"
+        app:layout_constraintTop_toBottomOf="@id/contentTv"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="10dp"
+        tools:text="@sample/posts.json/data/countrepost" />
+
+    <TextView
+        android:id="@+id/countViewsVt"
+        android:layout_width="35dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@+id/contentTv"
+        app:layout_constraintTop_toBottomOf="@id/contentTv"
+        android:layout_marginTop="20dp"
+        tools:layout_editor_absoluteY="270dp"
+        tools:text="@sample/posts.json/data/countViews" />
+
+
+
+    <ImageView
+        android:id="@+id/moreIv"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/avatarIv"
+        app:layout_constraintBottom_toBottomOf="@id/avatarIv"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        app:srcCompat="@drawable/ic_baseline_more_vert_24"
+        />
+    <ImageView
+        android:id="@+id/avatarIv"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_margin="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@sample/posts_avatars" />
+
+    <ImageView
+        android:id="@+id/favoritIv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        app:layout_constraintStart_toStartOf="@id/contentTv"
+        app:layout_constraintTop_toBottomOf="@id/contentTv"
+        android:layout_marginTop="20dp"
+        tools:srcCompat="@drawable/ic_baseline_favorite_border_24" />
+    <ImageView
+        android:id="@+id/repostIv"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        app:layout_constraintStart_toEndOf="@id/countFavorite"
+        app:layout_constraintTop_toBottomOf="@id/contentTv"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="10dp"
+        tools:srcCompat="@drawable/ic_baseline_reply_24"
+        />
+    <ImageView
+        android:id="@+id/visibolityIv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/contentTv"
+        app:layout_constraintBottom_toBottomOf="@id/countViewsVt"
+        app:layout_constraintEnd_toStartOf="@id/countViewsVt"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="10dp"
+        tools:srcCompat="@drawable/ic_baseline_visibility_24"
+        />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        app:layout_constraintTop_toBottomOf="@id/favoritIv"
+        android:background="#FF0000"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp" />
+
+    <View
+    android:layout_width="wrap_content"
+    android:layout_height="2dp"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/avatarIv"
+    android:paddingBottom="10dp"
+    android:background="#808080"
+    android:layout_marginTop="15dp"
+    android:layout_marginLeft="0dp"
+    android:layout_marginRight="0dp" />
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="2dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/contentTv"
+        android:background="#808080"
+        android:layout_marginBottom="15dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="0dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
